@@ -8,13 +8,13 @@ import java.time.LocalDateTime;
 @DiscriminatorColumn(name = "bills_pay")
 public class BillsPay extends Account{
 
-    private LocalDateTime payDay;
+    private LocalDateTime paymentDate;
 
-    public LocalDateTime getPayDay() {
-        return payDay;
+    public LocalDateTime getPaymentDate() {
+        return paymentDate;
     }
 
-    public void setPayDay(LocalDateTime payDay) {
-        this.payDay = payDay;
+    public void setPaymentDate(LocalDateTime paymentDate) {
+        this.paymentDate = paymentDate;
     }
 }
