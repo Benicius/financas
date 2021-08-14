@@ -21,9 +21,23 @@ public class ReleaseHelper {
         return realeaseRepository.save(release);
     }
 
+    public FinancialRelease calculationOfUnpaidValue(BigDecimal unpaidValue, LocalDateTime paymentDate){
+        FinancialRelease release = new FinancialRelease();
+        release.setUnpaidBills(unpaidValue);
+        release.setPaymentDate(paymentDate);
+        return realeaseRepository.save(release);
+    }
+
     public FinancialRelease calculationOfReceiveValue(BigDecimal receiveValue, LocalDateTime receiveDate){
         FinancialRelease release = new FinancialRelease();
         release.setReceiveValue(receiveValue);
+        release.setReceiveDate(receiveDate);
+        return realeaseRepository.save(release);
+    }
+
+    public FinancialRelease calculationOfUnreceivedValue(BigDecimal unreceived, LocalDateTime receiveDate){
+        FinancialRelease release = new FinancialRelease();
+        release.setUnreceivedBills(unreceived);
         release.setReceiveDate(receiveDate);
         return realeaseRepository.save(release);
     }

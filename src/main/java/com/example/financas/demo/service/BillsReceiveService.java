@@ -28,6 +28,8 @@ public class BillsReceiveService {
 
         if(billsReceive.isStatus()){
             releaseHelper.calculationOfReceiveValue(billsReceive.getPaymentAmount(), billsReceive.getDeliveryDate());
+        } else {
+            releaseHelper.calculationOfUnreceivedValue(billsReceive.getPaymentAmount(), billsReceive.getDeliveryDate());
         }
         return billsReceiveRepository.save(billsReceive);
     }

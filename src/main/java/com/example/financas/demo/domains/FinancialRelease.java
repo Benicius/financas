@@ -1,5 +1,7 @@
 package com.example.financas.demo.domains;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,6 +11,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class FinancialRelease implements Serializable {
 
     @Id
@@ -16,10 +19,10 @@ public class FinancialRelease implements Serializable {
     private Long id;
 
     private BigDecimal paymentValue;
-    private BigDecimal totalPaymentValue;
+    private BigDecimal unpaidBills;
 
     private BigDecimal receiveValue;
-    private BigDecimal totalReceiveValue;
+    private BigDecimal unreceivedBills;
 
     private LocalDateTime paymentDate;
     private LocalDateTime receiveDate;
@@ -40,13 +43,6 @@ public class FinancialRelease implements Serializable {
         this.paymentValue = paymentValue;
     }
 
-    public BigDecimal getTotalPaymentValue() {
-        return totalPaymentValue;
-    }
-
-    public void setTotalPaymentValue(BigDecimal totalPaymentValue) {
-        this.totalPaymentValue = totalPaymentValue;
-    }
 
     public BigDecimal getReceiveValue() {
         return receiveValue;
@@ -56,12 +52,12 @@ public class FinancialRelease implements Serializable {
         this.receiveValue = receiveValue;
     }
 
-    public BigDecimal getTotalReceiveValue() {
-        return totalReceiveValue;
+    public BigDecimal getUnreceivedBills() {
+        return unreceivedBills;
     }
 
-    public void setTotalReceiveValue(BigDecimal totalReceiveValue) {
-        this.totalReceiveValue = totalReceiveValue;
+    public void setUnreceivedBills(BigDecimal unreceivedBills) {
+        this.unreceivedBills = unreceivedBills;
     }
 
     public LocalDateTime getPaymentDate() {
@@ -78,5 +74,13 @@ public class FinancialRelease implements Serializable {
 
     public void setReceiveDate(LocalDateTime receiveDate) {
         this.receiveDate = receiveDate;
+    }
+
+    public BigDecimal getUnpaidBills() {
+        return unpaidBills;
+    }
+
+    public void setUnpaidBills(BigDecimal unpaidBills) {
+        this.unpaidBills = unpaidBills;
     }
 }

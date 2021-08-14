@@ -1,5 +1,7 @@
 package com.example.financas.demo.domains;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -7,6 +9,7 @@ import java.time.LocalDateTime;
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @DiscriminatorColumn(name = "account")
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Account {
 
     @Id

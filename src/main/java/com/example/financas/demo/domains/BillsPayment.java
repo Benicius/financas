@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @DiscriminatorColumn(name = "bills_pay")
-public class BillsPay extends Account{
+public class BillsPayment extends Account{
 
     private LocalDateTime paymentDate;
 
