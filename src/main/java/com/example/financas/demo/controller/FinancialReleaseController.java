@@ -1,6 +1,7 @@
 package com.example.financas.demo.controller;
 
 import com.example.financas.demo.helpers.FinancialReleaseHelper;
+import com.example.financas.demo.service.FinancialReleaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,9 +19,11 @@ public class FinancialReleaseController {
     @Autowired
     private FinancialReleaseHelper releaseHelper;
 
-    @GetMapping("financial-release")
-    public ResponseEntity<List<BigDecimal>> getAllFinancialRelease(){
+    @Autowired
+    private FinancialReleaseService financialReleaseService;
 
-        return new ResponseEntity<>(releaseHelper.getAllFinancialRelease(), HttpStatus.OK);
+    @GetMapping("financial-release")
+    public ResponseEntity<BigDecimal> getAllFinancialRelease(){
+        return new ResponseEntity<>(financialReleaseService.findSumReleaseFinancial(), HttpStatus.OK);
     }
 }

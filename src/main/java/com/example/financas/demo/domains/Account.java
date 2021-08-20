@@ -22,7 +22,7 @@ public class Account {
 
     private BigDecimal paymentAmount;
 
-    private Installments installments;
+    //private Installments installments;
 
     private boolean status;
 
@@ -56,14 +56,6 @@ public class Account {
 
     public void setPaymentAmount(BigDecimal paymentAmount) {
         this.paymentAmount = paymentAmount;
-    }
-
-    public Installments getInstallments() {
-        return installments;
-    }
-
-    public void setInstallments(Installments installments) {
-        this.installments = installments;
     }
 
     public boolean isStatus() {
