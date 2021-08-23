@@ -27,6 +27,18 @@ public class FinancialRelease implements Serializable {
     private LocalDateTime paymentDate;
     private LocalDateTime receiveDate;
 
+    public FinancialRelease(BigDecimal payment, BigDecimal unpaid
+        , BigDecimal receive, BigDecimal unreceived) {
+        this.paymentValue = payment;
+        this.unpaidBills = unpaid;
+        this.receiveValue = receive;
+        this.unreceivedBills = unreceived;
+    }
+
+
+    public FinancialRelease() {
+    }
+
     public Long getId() {
         return id;
     }

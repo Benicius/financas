@@ -13,8 +13,8 @@ import java.util.List;
 @Transactional
 public interface ReleaseFinancialRepository extends JpaRepository<FinancialRelease, Long> {
 
-  @Query("SELECT sum(f.paymentValue) as payment, sum(f.receiveValue) as receive, " +
-      "sum(f.unpaidBills) as unpaid, sum(f.unreceivedBills) as unreceived " +
+  @Query("SELECT new FinancialRelease(sum(f.paymentValue), sum(f.receiveValue), " +
+      "sum(f.unpaidBills), sum(f.unreceivedBills)) " +
       "FROM FinancialRelease f ")
-  BigDecimal findBySumReleaseFinancial();
+  FinancialRelease findBySumReleaseFinancial();
 }

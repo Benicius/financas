@@ -18,7 +18,7 @@ public class FinancialReleaseService {
         return releaseFinancialRepository.findAll();
     }
 
-    public BigDecimal findSumReleaseFinancial(){
+    public FinancialRelease findSumReleaseFinancial(){
         return releaseFinancialRepository.findBySumReleaseFinancial();
     }
 }
