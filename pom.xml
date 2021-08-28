@@ -15,6 +15,18 @@
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
+		<org.jacoco.version>0.8.3</org.jacoco.version>
+		<jacoco.plugin.version>0.8.3</jacoco.plugin.version>
+		<sonar.organization>benicius</sonar.organization>
+		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+		<sonar.coverage.exclusions>
+			src/test/java/*/,
+			*/controller/.java,
+			*/domains/.java,
+			*/helpers/.java,
+			*/repository/.java,
+			**/SearchApiApplication.java
+		</sonar.coverage.exclusions>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -46,6 +58,17 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.jacoco</groupId>
+			<artifactId>org.jacoco.agent</artifactId>
+			<classifier>runtime</classifier>
+			<version>${org.jacoco.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -54,7 +77,52 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+				<groupId>com.coveo</groupId>
+				<artifactId>fmt-maven-plugin</artifactId>
+				<version>2.12</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>format</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.sonarsource.scanner.maven</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>3.4.0.905</version>
+			</plugin>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>${jacoco.plugin.version}</version>
+				<configuration>
+					<excludes>
+						<exclude>*/controller/.class</exclude>
+						<exclude>*/domains/.class</exclude>
+						<exclude>*/helpers/.class</exclude>
+						<exclude>*/repository/.class</exclude>
+						<exclude>**/SearchApiApplication.class</exclude>
+					</excludes>
+				</configuration>
+				<executions>
+					<execution>
+						<id>agent</id>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>report</id>
+						<phase>test</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
-
 </project>

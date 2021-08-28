@@ -1,20 +1,20 @@
 package com.example.financas.demo.domains;
 
+import java.time.LocalDate;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
-import java.time.LocalDateTime;
 
 @Entity
 @DiscriminatorColumn(name = "bills_receive")
-public class BillsReceive extends Account{
+public class BillsReceive extends Account {
 
-    private LocalDateTime deliveryDate;
+  private LocalDate deliveryDate;
 
-    public LocalDateTime getDeliveryDate() {
-        return deliveryDate;
-    }
+  public LocalDate getDeliveryDate() {
+    return deliveryDate;
+  }
 
-    public void setDeliveryDate(LocalDateTime deliveryDate) {
-        this.deliveryDate = deliveryDate;
-    }
+  public void setDeliveryDate(LocalDate deliveryDate) {
+    this.deliveryDate = deliveryDate;
+  }
 }
