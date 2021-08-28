@@ -17,8 +17,6 @@
 		<java.version>11</java.version>
 		<org.jacoco.version>0.8.3</org.jacoco.version>
 		<jacoco.plugin.version>0.8.3</jacoco.plugin.version>
-		<sonar.organization>benicius</sonar.organization>
-		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 		<sonar.coverage.exclusions>
 			src/test/java/*/,
 			*/controller/.java,

@@ -52,7 +52,7 @@ public class BillsReceiveService {
     try {
       if (billsReceive.getId() != null) {
         FinancialRelease financialRelease = releaseRepository.getById(billsReceive.getId());
-        if (billsReceive.isStatus() == true) {
+        if (billsReceive.isStatus()) {
           financialRelease.setUnpaidBills(BigDecimal.ZERO);
           financialRelease.setPaymentValue(billsReceive.getPaymentAmount());
         } else {
