@@ -4,7 +4,6 @@ import com.financial.bdvenda.domains.FinancialRelease;
 import com.financial.bdvenda.repository.RealeaseRepository;
 import java.math.BigDecimal;
 import java.time.LocalDate;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

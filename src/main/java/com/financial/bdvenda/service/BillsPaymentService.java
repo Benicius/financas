@@ -7,7 +7,6 @@ import com.financial.bdvenda.repository.BillsPaymentRepository;
 import com.financial.bdvenda.repository.FinancialReleaseRepository;
 import java.math.BigDecimal;
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,14 +25,6 @@ public class BillsPaymentService {
     this.billsPaymentRepository = billsPaymentRepository;
     this.releaseHelper = releaseHelper;
     this.releaseRepository = releaseRepository;
-  }
-
-  public Iterable<BillsPayment> listBillsPayment() {
-    return billsPaymentRepository.findAll();
-  }
-
-  public Optional<BillsPayment> onlyBillsPayment(Long id) {
-    return billsPaymentRepository.findById(id);
   }
 
   public BillsPayment saveBillsPayment(BillsPayment billsPayment) {

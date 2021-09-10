@@ -22,8 +22,7 @@ import org.mockito.junit.MockitoJUnitRunner;
 public class BillsPaymentServiceTest {
 
   @InjectMocks BillsPaymentService paymentService;
-  @Mock
-  BillsPaymentRepository paymentRepository;
+  @Mock BillsPaymentRepository paymentRepository;
   @Mock ReleaseHelper releaseHelper;
 
   @Test
