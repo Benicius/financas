@@ -23,7 +23,7 @@
 			*/domains/.java,
 			*/helpers/.java,
 			*/repository/.java,
-			**/SearchApiApplication.java
+			**/DemoApiApplication.java
 		</sonar.coverage.exclusions>
 	</properties>
 	<dependencies>
@@ -67,6 +67,16 @@
 			<artifactId>junit</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.9.2</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.9.2</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -102,7 +112,7 @@
 						<exclude>*/domains/.class</exclude>
 						<exclude>*/helpers/.class</exclude>
 						<exclude>*/repository/.class</exclude>
-						<exclude>**/SearchApiApplication.class</exclude>
+						<exclude>**/DemoApiApplication.class</exclude>
 					</excludes>
 				</configuration>
 				<executions>
