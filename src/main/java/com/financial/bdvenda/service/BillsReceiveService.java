@@ -7,7 +7,6 @@ import com.financial.bdvenda.repository.BillsReceiveRepository;
 import com.financial.bdvenda.repository.FinancialReleaseRepository;
 import java.math.BigDecimal;
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,14 +25,6 @@ public class BillsReceiveService {
     this.billsReceiveRepository = billsReceiveRepository;
     this.releaseHelper = releaseHelper;
     this.releaseRepository = releaseRepository;
-  }
-
-  public Iterable<BillsReceive> allBillsReceive() {
-    return billsReceiveRepository.findAll();
-  }
-
-  public Optional<BillsReceive> onlyBillsReceive(String id) {
-    return billsReceiveRepository.findById(id);
   }
 
   public BillsReceive saveBillsReceive(BillsReceive billsReceive) {

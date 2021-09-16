@@ -8,22 +8,23 @@
 		<version>2.5.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example.financas</groupId>
-	<artifactId>demo</artifactId>
+	<groupId>com.financial.bdvenda</groupId>
+	<artifactId>consumer</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>demo</name>
-	<description>Demo project for Spring Boot</description>
+	<name>consumer</name>
+	<description>Learn Tests and Microservices</description>
 	<properties>
 		<java.version>11</java.version>
 		<org.jacoco.version>0.8.3</org.jacoco.version>
 		<jacoco.plugin.version>0.8.3</jacoco.plugin.version>
 		<sonar.coverage.exclusions>
-			src/test/java/*/,
-			*/controller/.java,
-			*/domains/.java,
-			*/helpers/.java,
-			*/repository/.java,
-			**/DemoApiApplication.java
+			src/test/java/**/*,
+			**/config/*.java,
+			**/controller/*.java,
+			**/domains/*.java,
+			**/helpers/*.java,
+			**/repository/*.java,
+			**/FinancialApiApplication.java
 		</sonar.coverage.exclusions>
 	</properties>
 	<dependencies>
@@ -102,11 +103,12 @@
 				<version>${jacoco.plugin.version}</version>
 				<configuration>
 					<excludes>
-						<exclude>*/controller/.class</exclude>
-						<exclude>*/domains/.class</exclude>
-						<exclude>*/helpers/.class</exclude>
-						<exclude>*/repository/.class</exclude>
-						<exclude>**/DemoApiApplication.class</exclude>
+						<exclude>**/config/*.class</exclude>
+						<exclude>**/controller/*.class</exclude>
+						<exclude>**/domains/*.class</exclude>
+						<exclude>**/helpers/*.class</exclude>
+						<exclude>**/repository/*.class</exclude>
+						<exclude>**/FinancialApiApplication.class</exclude>
 					</excludes>
 				</configuration>
 				<executions>
