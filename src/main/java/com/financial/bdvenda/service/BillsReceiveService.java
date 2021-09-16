@@ -32,23 +32,23 @@ public class BillsReceiveService {
     return billsReceiveRepository.findAll();
   }
 
-  public Optional<BillsReceive> onlyBillsReceive(Long id) {
+  public Optional<BillsReceive> onlyBillsReceive(String id) {
     return billsReceiveRepository.findById(id);
   }
 
   public BillsReceive saveBillsReceive(BillsReceive billsReceive) {
 
-    if (billsReceive.isStatus()) {
+    /*if (billsReceive.isStatus()) {
       releaseHelper.calculationOfReceiveValue(
           billsReceive.getPaymentAmount(), billsReceive.getDeliveryDate());
     } else {
       releaseHelper.calculationOfUnreceivedValue(
           billsReceive.getPaymentAmount(), billsReceive.getDeliveryDate());
-    }
+    }*/
     return billsReceiveRepository.save(billsReceive);
   }
 
-  public BillsReceive updateBillsReceive(BillsReceive billsReceive) {
+  /*public BillsReceive updateBillsReceive(BillsReceive billsReceive) {
 
     try {
       if (billsReceive.getId() != null) {
@@ -68,5 +68,5 @@ public class BillsReceiveService {
       ex.printStackTrace();
     }
     return null;
-  }
+  }*/
 }

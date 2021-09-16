@@ -1,15 +1,12 @@
 package com.financial.bdvenda.repository;
 
 import com.financial.bdvenda.domains.FinancialRelease;
-import javax.transaction.Transactional;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
 
 @Repository
-@Transactional
-public interface FinancialReleaseRepository extends JpaRepository<FinancialRelease, Long> {
+public interface FinancialReleaseRepository extends MongoRepository<FinancialRelease, String> {
 
   @Query(
       "SELECT new FinancialRelease(sum(f.paymentValue), sum(f.receiveValue), "

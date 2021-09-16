@@ -1,11 +1,11 @@
 package com.financial.bdvenda.domains;
 
-import java.time.LocalDate;
-import javax.persistence.DiscriminatorColumn;
-import javax.persistence.Entity;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
-@DiscriminatorColumn(name = "bills_receive")
+import java.time.LocalDate;
+
+
+@Document(collation = "billsReceive")
 public class BillsReceive extends Account {
 
   private LocalDate deliveryDate;

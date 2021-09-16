@@ -1,19 +1,19 @@
 package com.financial.bdvenda.domains;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import javax.persistence.*;
 
-@Entity
-@Table(name = "financial_release")
+@Document
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class FinancialRelease implements Serializable {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+  private String id;
 
   private BigDecimal paymentValue;
   private BigDecimal unpaidBills;
@@ -33,11 +33,11 @@ public class FinancialRelease implements Serializable {
 
   public FinancialRelease() {}
 
-  public Long getId() {
+  public String getId() {
     return id;
   }
 
-  public void setId(Long id) {
+  public void setId(String id) {
     this.id = id;
   }
 

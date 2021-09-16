@@ -22,7 +22,7 @@ public class BillsReceiveController {
 
   @GetMapping("/billsreceive/{id}")
   public ResponseEntity<Optional<BillsReceive>> getOnlyBillsReceive(
-      @PathVariable(value = "id") Long id) {
+      @PathVariable(value = "id") String id) {
     return new ResponseEntity<>(billsReceiveService.onlyBillsReceive(id), HttpStatus.OK);
   }
 
@@ -32,9 +32,9 @@ public class BillsReceiveController {
         billsReceiveService.saveBillsReceive(billsReceive), HttpStatus.CREATED);
   }
 
-  @PutMapping("/billsreceive")
+  /*@PutMapping("/billsreceive")
   public ResponseEntity<BillsReceive> updateBillsReceive(@RequestBody BillsReceive billsReceive) {
     return new ResponseEntity<>(
         billsReceiveService.updateBillsReceive(billsReceive), HttpStatus.CREATED);
-  }
+  }*/
 }

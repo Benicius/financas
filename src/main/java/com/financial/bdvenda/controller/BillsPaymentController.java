@@ -25,7 +25,7 @@ public class BillsPaymentController {
 
   @GetMapping("/billspayment/{id}")
   public ResponseEntity<Optional<BillsPayment>> getOnlyBillsPayment(
-      @PathVariable(value = "id") Long id) {
+      @PathVariable(value = "id") String id) {
     return new ResponseEntity<>(billsPaymentService.onlyBillsPayment(id), HttpStatus.OK);
   }
 
@@ -35,9 +35,9 @@ public class BillsPaymentController {
         billsPaymentService.saveBillsPayment(billsPayment), HttpStatus.CREATED);
   }
 
-  @PutMapping("/billspayment")
+  /*@PutMapping("/billspayment")
   public ResponseEntity<BillsPayment> updateBillsPayment(@RequestBody BillsPayment billsPayment) {
     return new ResponseEntity<>(
         billsPaymentService.updateBillsPayment(billsPayment), HttpStatus.OK);
-  }
+  }*/
 }

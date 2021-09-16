@@ -32,7 +32,7 @@ public class BillsPaymentService {
     return billsPaymentRepository.findAll();
   }
 
-  public Optional<BillsPayment> onlyBillsPayment(Long id) {
+  public Optional<BillsPayment> onlyBillsPayment(String id) {
     return billsPaymentRepository.findById(id);
   }
 
@@ -48,11 +48,11 @@ public class BillsPaymentService {
     return billsPaymentRepository.save(billsPayment);
   }
 
-  public BillsPayment updateBillsPayment(BillsPayment billsPayment) {
+  /*public BillsPayment updateBillsPayment(BillsPayment billsPayment) {
 
     try {
       if (billsPayment.getId() != null) {
-        FinancialRelease financialRelease = releaseRepository.getById(billsPayment.getId());
+        FinancialRelease financialRelease = releaseRepository.findById(billsPayment.getId());
         if (billsPayment.isStatus()) {
           financialRelease.setUnpaidBills(BigDecimal.ZERO);
           financialRelease.setPaymentValue(billsPayment.getPaymentAmount());
@@ -68,5 +68,5 @@ public class BillsPaymentService {
       ex.printStackTrace();
     }
     return null;
-  }
+  }*/
 }
