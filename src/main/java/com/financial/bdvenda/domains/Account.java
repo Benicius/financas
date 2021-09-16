@@ -7,9 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-@Document(collation = "account")
-@JsonInclude(JsonInclude.Include.NON_NULL)
-public class Account {
+public abstract class Account {
 
   @Id
   private String id;
